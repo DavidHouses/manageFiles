@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BI_TableauModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BI_Tableau.dbo.AC_Type' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="AC_Type">
+          <Property Name="Nave" Type="varchar" MaxLength="10" />
+          <Property Name="Type_AC" Type="varchar" MaxLength="10" />
+          <Property Name="Mes" Type="date" />
+        </EntityType>-->
+        <EntityType Name="CAT_AWB_VPM">
+          <Key>
+            <PropertyRef Name="id_CatAWB" />
+          </Key>
+          <Property Name="id_CatAWB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AWB_Number" Type="varchar" MaxLength="50" />
+          <Property Name="Agent_Code" Type="varchar" MaxLength="50" />
+          <Property Name="Agent_Name" Type="varchar" MaxLength="100" />
+          <Property Name="DayInsertArchive" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Cat_Fechas_MC">
+          <Key>
+            <PropertyRef Name="id_fecha" />
+          </Key>
+          <Property Name="id_fecha" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DayInsertArchive" Type="date" />
+          <Property Name="StartDayInsertArchive" Type="date" />
+          <Property Name="EndDayInsertArchive" Type="date" />
+          <Property Name="Start_STD_LOCAL_Date" Type="date" />
+          <Property Name="End_STD_LOCAL_Date" Type="date" />
+        </EntityType>
+        <EntityType Name="Cat_Stations_M">
+          <Key>
+            <PropertyRef Name="idStation" />
+          </Key>
+          <Property Name="idStation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STATION" Type="varchar" MaxLength="10" />
+          <Property Name="DESC_CITY" Type="varchar" MaxLength="80" />
+          <Property Name="DESC_AIRPORTS" Type="varchar" MaxLength="80" />
+          <Property Name="DESC_COUNTRY" Type="varchar" MaxLength="50" />
+          <Property Name="ID_ZONE" Type="varchar" MaxLength="10" />
+          <Property Name="HORA_Z" Type="float" />
+          <Property Name="DIF_MEX" Type="varchar" MaxLength="10" />
+          <Property Name="NUM" Type="float" />
+          <Property Name="HRS" Type="float" />
+          <Property Name="GHA" Type="varchar" MaxLength="30" />
+          <Property Name="DETALLE1" Type="varchar" MaxLength="50" />
+          <Property Name="DETALLE2" Type="varchar" MaxLength="50" />
+          <Property Name="DETALLE3" Type="varchar" MaxLength="50" />
+          <Property Name="DETALLE4" Type="varchar" MaxLength="50" />
+          <Property Name="DETALLE5" Type="varchar" MaxLength="50" />
+          <Property Name="REGION1" Type="varchar" MaxLength="25" />
+          <Property Name="REGION2" Type="varchar" MaxLength="25" />
+          <Property Name="CAMPOS A MODIFICAR" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BI_Tableau.dbo.Charters' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Charters">
+          <Property Name="Tramos_a_descartar" Type="varchar" MaxLength="50" />
+          <Property Name="Validacion" Type="varchar" MaxLength="20" />
+          <Property Name="DayInsert" Type="date" />
+          <Property Name="Mes" Type="date" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BI_Tableau.dbo.DAA_Tramos_a_descartar' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="DAA_Tramos_a_descartar">
+          <Property Name="Tramos_a_descartar" Type="varchar" MaxLength="50" />
+          <Property Name="Validacion" Type="varchar" MaxLength="50" />
+          <Property Name="DayInsert" Type="date" />
+          <Property Name="Mes" Type="date" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BI_Tableau.dbo.VPM_Alta_Demanda_Aerea' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="VPM_Alta_Demanda_Aerea">
+          <Property Name="Destination" Type="varchar" MaxLength="10" />
+          <Property Name="Validacion" Type="varchar" MaxLength="10" />
+          <Property Name="DayInsert" Type="date" />
+          <Property Name="Mes" Type="date" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BI_Tableau.dbo.VPM_Alta_Demanda_Terrestre' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="VPM_Alta_Demanda_Terrestre">
+          <Property Name="Destination" Type="varchar" MaxLength="10" />
+          <Property Name="Validacion" Type="varchar" MaxLength="10" />
+          <Property Name="DayInsert" Type="date" />
+          <Property Name="Mes" Type="date" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BI_Tableau.dbo.VPM_Product' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="VPM_Product">
+          <Property Name="Product" Type="varchar" MaxLength="10" />
+          <Property Name="Validacion" Type="varchar" MaxLength="20" />
+          <Property Name="DayInsert" Type="date" />
+          <Property Name="Mes" Type="date" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BI_Tableau.dbo.VPM_Producto_Homologado' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="VPM_Producto_Homologado">
+          <Property Name="Product" Type="varchar" MaxLength="50" />
+          <Property Name="Validacion" Type="varchar" MaxLength="50" />
+          <Property Name="DayInsert" Type="date" />
+          <Property Name="Mes" Type="date" />
+        </EntityType>-->
+        <EntityContainer Name="BI_TableauModelStoreContainer">
+          <EntitySet Name="CAT_AWB_VPM" EntityType="Self.CAT_AWB_VPM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cat_Fechas_MC" EntityType="Self.Cat_Fechas_MC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cat_Stations_M" EntityType="Self.Cat_Stations_M" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BI_TableauModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CAT_AWB_VPM">
+          <Key>
+            <PropertyRef Name="id_CatAWB" />
+          </Key>
+          <Property Name="id_CatAWB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AWB_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Agent_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Agent_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DayInsertArchive" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Cat_Fechas_MC">
+          <Key>
+            <PropertyRef Name="id_fecha" />
+          </Key>
+          <Property Name="id_fecha" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DayInsertArchive" Type="DateTime" Precision="0" />
+          <Property Name="StartDayInsertArchive" Type="DateTime" Precision="0" />
+          <Property Name="EndDayInsertArchive" Type="DateTime" Precision="0" />
+          <Property Name="Start_STD_LOCAL_Date" Type="DateTime" Precision="0" />
+          <Property Name="End_STD_LOCAL_Date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Cat_Stations_M">
+          <Key>
+            <PropertyRef Name="idStation" />
+          </Key>
+          <Property Name="idStation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DESC_CITY" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="DESC_AIRPORTS" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="DESC_COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID_ZONE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="HORA_Z" Type="Double" />
+          <Property Name="DIF_MEX" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NUM" Type="Double" />
+          <Property Name="HRS" Type="Double" />
+          <Property Name="GHA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DETALLE1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DETALLE2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DETALLE3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DETALLE4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DETALLE5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REGION1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="REGION2" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CAMPOS_A_MODIFICAR" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="BI_TableauEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CAT_AWB_VPM" EntityType="Self.CAT_AWB_VPM" />
+          <EntitySet Name="Cat_Fechas_MC" EntityType="Self.Cat_Fechas_MC" />
+          <EntitySet Name="Cat_Stations_M" EntityType="Self.Cat_Stations_M" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BI_TableauModelStoreContainer" CdmEntityContainer="BI_TableauEntities">
+          <EntitySetMapping Name="CAT_AWB_VPM">
+            <EntityTypeMapping TypeName="BI_TableauModel.CAT_AWB_VPM">
+              <MappingFragment StoreEntitySet="CAT_AWB_VPM">
+                <ScalarProperty Name="id_CatAWB" ColumnName="id_CatAWB" />
+                <ScalarProperty Name="AWB_Number" ColumnName="AWB_Number" />
+                <ScalarProperty Name="Agent_Code" ColumnName="Agent_Code" />
+                <ScalarProperty Name="Agent_Name" ColumnName="Agent_Name" />
+                <ScalarProperty Name="DayInsertArchive" ColumnName="DayInsertArchive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cat_Fechas_MC">
+            <EntityTypeMapping TypeName="BI_TableauModel.Cat_Fechas_MC">
+              <MappingFragment StoreEntitySet="Cat_Fechas_MC">
+                <ScalarProperty Name="id_fecha" ColumnName="id_fecha" />
+                <ScalarProperty Name="DayInsertArchive" ColumnName="DayInsertArchive" />
+                <ScalarProperty Name="StartDayInsertArchive" ColumnName="StartDayInsertArchive" />
+                <ScalarProperty Name="EndDayInsertArchive" ColumnName="EndDayInsertArchive" />
+                <ScalarProperty Name="Start_STD_LOCAL_Date" ColumnName="Start_STD_LOCAL_Date" />
+                <ScalarProperty Name="End_STD_LOCAL_Date" ColumnName="End_STD_LOCAL_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cat_Stations_M">
+            <EntityTypeMapping TypeName="BI_TableauModel.Cat_Stations_M">
+              <MappingFragment StoreEntitySet="Cat_Stations_M">
+                <ScalarProperty Name="idStation" ColumnName="idStation" />
+                <ScalarProperty Name="STATION" ColumnName="STATION" />
+                <ScalarProperty Name="DESC_CITY" ColumnName="DESC_CITY" />
+                <ScalarProperty Name="DESC_AIRPORTS" ColumnName="DESC_AIRPORTS" />
+                <ScalarProperty Name="DESC_COUNTRY" ColumnName="DESC_COUNTRY" />
+                <ScalarProperty Name="ID_ZONE" ColumnName="ID_ZONE" />
+                <ScalarProperty Name="HORA_Z" ColumnName="HORA_Z" />
+                <ScalarProperty Name="DIF_MEX" ColumnName="DIF_MEX" />
+                <ScalarProperty Name="NUM" ColumnName="NUM" />
+                <ScalarProperty Name="HRS" ColumnName="HRS" />
+                <ScalarProperty Name="GHA" ColumnName="GHA" />
+                <ScalarProperty Name="DETALLE1" ColumnName="DETALLE1" />
+                <ScalarProperty Name="DETALLE2" ColumnName="DETALLE2" />
+                <ScalarProperty Name="DETALLE3" ColumnName="DETALLE3" />
+                <ScalarProperty Name="DETALLE4" ColumnName="DETALLE4" />
+                <ScalarProperty Name="DETALLE5" ColumnName="DETALLE5" />
+                <ScalarProperty Name="REGION1" ColumnName="REGION1" />
+                <ScalarProperty Name="REGION2" ColumnName="REGION2" />
+                <ScalarProperty Name="CAMPOS_A_MODIFICAR" ColumnName="CAMPOS A MODIFICAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
